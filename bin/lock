@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+
+# Define some paths
+basePath="${HOME}/Pictures/Lockscreen";
+lockPath="${basePath}/.lock";
+imagePath="${basePath}/capture.png";
+
+# Create the directory, if it doesn't exist
+if [ ! -d "${basePath}" ]; then
+  mkdir -p $basePath;
+fi;
+
+#
+# Take a screenshot, blur it, and use it as lockscreen.
+#
+lock() {
+  # Check to see if we are already doing something
+  if [ ! -f "${lockPath}" ]; then
+    echo "Locking screen...";
+    touch $lockPath;
+
+    screencapture -m $imagePath;
+    /usr/local/bin/convert $imagePath -scale 10% -scale 1000% $imagePath;
+    open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app;
+
+    rm -f $lockPath;
+  fi;
+}
+
+lock;
