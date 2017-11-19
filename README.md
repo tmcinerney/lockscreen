@@ -9,7 +9,7 @@ By following these steps, you can setup a MacOS lockscreen, that uses a blurred 
     ```sh
     brew install imagemagick
     ```
-1. Download the `lock` file. In this case it is saved to `$HOME/.dotfiles/bin/lock`
+1. Download the `lock` [file](https://github.com/tmcinerney/lockscreen/blob/master/bin/lock). In this case it is saved to `$HOME/.dotfiles/bin/lock`
 1. Ensure `lock` has execute permissions  by running:
 
     ```sh
