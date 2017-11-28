@@ -30,9 +30,9 @@ By following these steps, you can setup a MacOS lockscreen, that uses a blurred 
 
     ![](./assets/img/step_2_automator_search_shell.png)
 1. Once the "Run Shell Script" Action has loaded in the main section ensure:
-    - The "Service receives selected" dropdown value is set to "no input"
-    - The "Shell" dropdown value is set to "/bin/sh"
-    - The value of the script is set to the location of the `lock` file
+    * The "Service receives selected" dropdown value is set to "no input"
+    * The "Shell" dropdown value is set to "/bin/sh"
+    * The value of the script is set to the location of the `lock` file
 
         ```sh
         $HOME/.dotfiles/bin/lock
@@ -60,3 +60,20 @@ By following these steps, you can setup a MacOS lockscreen, that uses a blurred 
 1. Open the "Source" dropdown, select the "Choose Folder..." option, navigate to and select the `$HOME/Pictures/Lockscreen` folder
 1. Test that everything works by hitting the `Cmd+Ctrl+L` key combination.
 
+## Donate
+If you would like to donate, you can use the following addresses:
+
+### Bitcoin
+```
+1Fvav7ATZvuAZ2Xv8JU9jAUmeV8MCLSCUF
+```
+
+### Ethereum
+```
+0x9a6B7DF0c5EDAE69408A79428B8e7Fa8A318AD60
+```
+
+### Litecoin
+```
+LQ5RaA6nafJtQKkmu3gZKketJ9voBCYz7t
+```
