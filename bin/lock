@@ -22,10 +22,26 @@ lock() {
 
     screencapture -m $imagePath;
     /usr/local/bin/convert $imagePath -scale 10% -scale 1000% $imagePath;
-    open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app;
+    launchScreensaver;
 
     rm -f $lockPath;
   fi;
+}
+
+#
+# The location of the screensaver app has changed in High Sierra
+#
+launchScreensaver() {
+  local name="ScreenSaverEngine";
+  local path;
+
+  if [[ "${OSTYPE}" == "darwin16" ]]; then
+    path="/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/";
+  else
+    path="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/";
+  fi;
+
+  open -a "${path}${name}";
 }
 
 lock;
