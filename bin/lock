@@ -37,6 +37,7 @@ launchScreensaver() {
 
   if [[ "${OSTYPE}" == "darwin16" ]]; then
     path="/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/";
+    name="${name}.app";
   else
     path="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/";
   fi;
